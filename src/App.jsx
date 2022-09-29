@@ -7,7 +7,9 @@ import {
 import ErrorPage from './routes/error/ErrorPage'
 import Home from './routes/home/Home'
 import Navigation from './routes/navigation/Navigation'
-import SignIn from './routes/sign-in/SignIn'
+import Authentication from './routes/authentication/Authentication'
+import Shop from './routes/shop/Shop'
+
 
 const App = () => {
   const router = createBrowserRouter(
@@ -15,7 +17,8 @@ const App = () => {
       <Route path='/' element={<Navigation />} errorElement={<ErrorPage />}>
         <Route errorElement={<ErrorPage />}>
           <Route index element={<Home />} />
-          <Route path='/signin' element={<SignIn />} />
+          <Route path='auth' element={<Authentication />} />
+          <Route path='shop' element={<Shop />} />
         </Route>
       </Route>
     )
