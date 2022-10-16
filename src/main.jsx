@@ -1,22 +1,16 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
+import { Provider } from 'react-redux'
 
 import App from './App'
-import { CartProvider } from './contexts/CartContext'
-import { CategoriesProvider } from './contexts/CategoriesContext'
-import { UserProvider } from './contexts/UserContext'
-
+import { store } from './store/store'
 
 import './index.scss'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <UserProvider>
-      <CategoriesProvider>
-        <CartProvider>
-          <App />
-        </CartProvider>
-      </CategoriesProvider>
-    </UserProvider>
+    <Provider store={store}>
+      <App />
+    </Provider>
   </React.StrictMode>
 )
